@@ -159,4 +159,37 @@ public class RomanNumeralsConverterTest {
         assertEquals( "XCIX", romanNumeralsConverter.Convert(99));
     }
 
+    @Test
+    public void ConvertOneHundredToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "C", romanNumeralsConverter.Convert(100));
+    }
+
+    @Test
+    public void ConvertOneHundredAndOneToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CI", romanNumeralsConverter.Convert(101));
+    }
+    @Test
+    public void ConvertOneHundredAndNineToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CIX", romanNumeralsConverter.Convert(109));
+    }
+
+    @Test
+    public void ConvertOneHundredAndTenToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CX", romanNumeralsConverter.Convert(110));
+    }
+
+    @Test
+    public void ConvertOneHundredAndTwentyFiveToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CXXV", romanNumeralsConverter.Convert(125));
+    }
 }

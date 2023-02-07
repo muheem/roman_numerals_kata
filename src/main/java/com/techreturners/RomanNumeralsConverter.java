@@ -8,10 +8,11 @@ public class RomanNumeralsConverter {
     public String ConvertDigit(int digit) {
         String result = "";
 
-        int left = 1;
+        int leftover = 1;
         // If 20 treat as 10 HACK
+
         if (digit >= 20) {
-            left = digit /10;
+            leftover = digit / 10;
             digit = 10;
         }
 
@@ -25,7 +26,7 @@ public class RomanNumeralsConverter {
                 result = "I" + capitals[0];
             else if (i == 9) {
                 result = "";
-                switch (left) {
+                switch (leftover) {
                 case 1: result = "X"; break;
                 case 2: result = "XX"; break;
                 case 3: result = "XXX"; break;
@@ -35,10 +36,9 @@ public class RomanNumeralsConverter {
                 case 7: result = "LXX"; break;
                 case 8: result = "LXXX"; break;
                 case 9: result = "XC"; break;
+                case 10: result = "C"; break;
                 }
             }
-            else if (i == 10)
-                result = "C";
             else if ( i < 3 || i > 4 )
                 result += "I";
         }
@@ -49,17 +49,21 @@ public class RomanNumeralsConverter {
         String result = "";
 
 
-
-        // Reverse digits
+        // Go through digits in reverse
+        // if number is 123, consider it as 321, least significant first.
         LinkedList<Integer> stack = new LinkedList<Integer>();
         int i = 0;
         while (arabicNumber > 0) {
-            if (i==0)
-                stack.push( (arabicNumber % 10) );
-            else
-                stack.push( (arabicNumber % 10) * 10);
+            if (i==0) // least significant digit
+                stack.push( (arabicNumber % 10) ); // Store 1 as 1
+            else if (i==1)
+                stack.push( (arabicNumber % 10) * 10); // Store 2 as 20
+            else if (i==2)
+                stack.push( (arabicNumber % 10) * 100); // Store 3 as 300
             i++;
-            arabicNumber = arabicNumber / 10;
+
+            // remove digit
+            arabicNumber = arabicNumber / 10; // lose least significant bit as the remainder. 321 becomes 32
         }
 
 
