@@ -92,4 +92,71 @@ public class RomanNumeralsConverterTest {
 
         assertEquals( "XIV", romanNumeralsConverter.Convert(14));
     }
+    @Test
+    public void ConvertFifteenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XV", romanNumeralsConverter.Convert(15));
+    }
+    @Test
+    public void ConvertEighteenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XVIII", romanNumeralsConverter.Convert(18));
+    }
+
+    @Test
+    public void ConvertNineteenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XIX", romanNumeralsConverter.Convert(19));
+    }
+
+    @Test
+    public void ConvertTwentyToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XX", romanNumeralsConverter.Convert(20));
+    }
+
+    @Test
+    public void ConvertTwentyFiveToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XXV", romanNumeralsConverter.Convert(25));
+    }
+
+    @Test
+    public void ConvertThirtyToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XXX", romanNumeralsConverter.Convert(30));
+    }
+    @Test
+    public void ConvertFortyToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XL", romanNumeralsConverter.Convert(40));
+    }
+    @Test
+    public void ConvertFiftyToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "L", romanNumeralsConverter.Convert(50));
+    }
+
+    @Test
+    public void ConvertNinetyToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XC", romanNumeralsConverter.Convert(90));
+    }
+
+    @Test
+    public void ConvertNinetyNineToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XCIX", romanNumeralsConverter.Convert(99));
+    }
+
 }
