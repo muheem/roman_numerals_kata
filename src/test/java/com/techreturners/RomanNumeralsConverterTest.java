@@ -20,4 +20,54 @@ public class RomanNumeralsConverterTest {
 
         assertEquals( "II", romanNumeralsConverter.Convert(2));
     }
+    @Test
+    public void ConvertThreeToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "III", romanNumeralsConverter.Convert(3));
+    }
+    @Test
+    public void ConvertFourToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "IV", romanNumeralsConverter.Convert(4));
+    }
+    @Test
+    public void ConvertFiveToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "V", romanNumeralsConverter.Convert(5));
+    }
+    @Test
+    public void ConvertSixToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "VI", romanNumeralsConverter.Convert(6));
+    }
+    @Test
+    public void ConvertSevenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "VII", romanNumeralsConverter.Convert(7));
+    }
+    @Test
+    public void ConvertEightToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "VIII", romanNumeralsConverter.Convert(8));
+    }
+
+    @Test
+    public void ConvertNineToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "IX", romanNumeralsConverter.Convert(9));
+    }
+
+    @Test
+    public void ConvertTenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "X", romanNumeralsConverter.Convert(10));
+    }
 }
