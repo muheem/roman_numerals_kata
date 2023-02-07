@@ -70,4 +70,26 @@ public class RomanNumeralsConverterTest {
 
         assertEquals( "X", romanNumeralsConverter.Convert(10));
     }
+
+    @Test
+    public void ConvertElevenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XI", romanNumeralsConverter.Convert(11));
+    }
+    @Test
+    public void ConvertTwelveToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XII", romanNumeralsConverter.Convert(12));
+    }
+
+
+
+    @Test
+    public void ConvertFourteenToNumeral() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "XIV", romanNumeralsConverter.Convert(14));
+    }
 }
