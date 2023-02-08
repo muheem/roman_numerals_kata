@@ -3,76 +3,59 @@ import java.util.*;
 
 public class RomanNumeralsConverter {
 
-    static char[] capitals = {'X', 'L','C','M'};
+    static String[] capitals = {"I","V","X","L","C","D","M"};
 
-    public String ConvertDigit(int digit) {
+
+    public String ConvertDigit(int digit, int pos) {
         String result = "";
 
-        int leftover = 1;
-        // If 20 treat as 10 HACK
+        String c1 = capitals[pos];
+        String c2 = capitals[pos+1];
+        String c3 = capitals[pos+2];
 
-        if (digit >= 20) {
-            leftover = digit / 10;
-            digit = 10;
-        }
-
-        for (int i = 0; i < digit; i++) {
-
-            if (i == 3)
-                result = "IV";
-            else if (i == 4)
-                result = "V";
-            else if (i == 8)
-                result = "I" + capitals[0];
-            else if (i == 9) {
+        switch (digit) {
+            case 1:
+                result = c1;
+                break;
+            case 2:
+                result = c1+c1;
+                break;
+            case 3:
+                result = c1+c1+c1;
+                break;
+            case 4:
+                result = c1+c2;
+                break;
+            case 5:
+                result = c2;
+                break;
+            case 6:
+                result = c2+c1;
+                break;
+            case 7:
+                result = c2+c1+c1;
+                break;
+            case 8:
+                result = c2+c1+c1+c1;
+                break;
+            case 9:
+                result = c1+c3;
+                break;
+            case 0:
                 result = "";
-                switch (leftover) {
-                case 1: result = "X"; break;
-                case 2: result = "XX"; break;
-                case 3: result = "XXX"; break;
-                case 4: result = "XL"; break;
-                case 5: result = "L"; break;
-                case 6: result = "LX"; break;
-                case 7: result = "LXX"; break;
-                case 8: result = "LXXX"; break;
-                case 9: result = "XC"; break;
-                case 10: result = "C"; break;
-                }
-            }
-            else if ( i < 3 || i > 4 )
-                result += "I";
+                break;
         }
+
         return result;
     }
 
     public String Convert(int arabicNumber) {
         String result = "";
-
-
-        // Go through digits in reverse
-        // if number is 123, consider it as 321, least significant first.
-        LinkedList<Integer> stack = new LinkedList<Integer>();
-        int i = 0;
-        while (arabicNumber > 0) {
-            if (i==0) // least significant digit
-                stack.push( (arabicNumber % 10) ); // Store 1 as 1
-            else if (i==1)
-                stack.push( (arabicNumber % 10) * 10); // Store 2 as 20
-            else if (i==2)
-                stack.push( (arabicNumber % 10) * 100); // Store 3 as 300
-            i++;
-
-            // remove digit
-            arabicNumber = arabicNumber / 10; // lose least significant bit as the remainder. 321 becomes 32
-        }
-
-
-        // Split numbers and call function
-        String current = "";
-        while (!stack.isEmpty()) {
-            result += ConvertDigit(stack.pop());// + result;
-        }
-
+        for (int i =0; arabicNumber > 0 ; i++) {
+            // Chop of end digit and convert to Roman Numeral, add to string.
+            result = ConvertDigit((arabicNumber % 10), i*2) + result;
+            arabicNumber = arabicNumber / 10;
+            }
         return result;
     }
 }

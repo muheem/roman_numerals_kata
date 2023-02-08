@@ -84,8 +84,6 @@ public class RomanNumeralsConverterTest {
         assertEquals( "XII", romanNumeralsConverter.Convert(12));
     }
 
-
-
     @Test
     public void ConvertFourteenToNumeral() {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
@@ -191,5 +189,25 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
 
         assertEquals( "CXXV", romanNumeralsConverter.Convert(125));
+    }
+
+    @Test
+    public void ConvertOneHundredAndNinetyNineToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CXCIX", romanNumeralsConverter.Convert(199));
+    }
+
+    @Test
+    public void ConvertTwoHundredToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CC", romanNumeralsConverter.Convert(200));
+    }
+    @Test
+    public void ConvertTwoHundredAndOneToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CCI", romanNumeralsConverter.Convert(201));
     }
 }
