@@ -1,7 +1,11 @@
 package com.techreturners;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 
 public class RomanNumeralsConverterTest {
@@ -210,4 +214,90 @@ public class RomanNumeralsConverterTest {
 
         assertEquals( "CCI", romanNumeralsConverter.Convert(201));
     }
+
+    @Test
+    public void ConvertFiveHundredToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "D", romanNumeralsConverter.Convert(500));
+    }
+
+    @Test
+    public void ConvertFiveHundredAndThirtyTwoToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "DXXXII", romanNumeralsConverter.Convert(532));
+    }
+
+    @Test
+    public void ConvertNineHundredAndNinetyToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CMXC", romanNumeralsConverter.Convert(990));
+    }
+
+    @Test
+    public void ConvertNineHundredAndNinetyNineToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "CMXCIX", romanNumeralsConverter.Convert(999));
+    }
+    @Test
+    public void ConvertOneThousandFourHundredAndNinetyToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "MCDXC", romanNumeralsConverter.Convert(1490));
+    }
+
+    @Test
+    public void Convert2222ToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "MMCCXXII", romanNumeralsConverter.Convert(2222));
+    }
+
+    @Test
+    public void Convert3333ToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "MMMCCCXXXIII", romanNumeralsConverter.Convert(3333));
+    }
+
+    @Test
+    public void Convert3888ToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "MMMDCCCLXXXVIII", romanNumeralsConverter.Convert(3888));
+    }
+
+    @Test
+    public void Convert3900ToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "MMMCM", romanNumeralsConverter.Convert(3900));
+    }
+
+    @Test
+    public void ConvertZeroToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "", romanNumeralsConverter.Convert(0));
+    }
+
+    @Test
+    public void ConvertMinusOneToNumerals() {
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+
+        assertEquals( "", romanNumeralsConverter.Convert(-1));
+    }
+
+ /*
+ /*
+    @ParameterizedTest
+    @CsvFileSource(resources = "roman_numbers.csv", numLinesToSkip = 1)
+    public void ConvertNumbersOneToHundredToNumerals(String str, int length) {
+        assertEquals( "XX", romanNumeralsConverter.Convert(22));
+    }
+    */
+
 }

@@ -3,15 +3,19 @@ import java.util.*;
 
 public class RomanNumeralsConverter {
 
-    static String[] capitals = {"I","V","X","L","C","D","M"};
+    static String[] capitals = {"I","V","X","L","C","D","M","",""};
 
 
     public String ConvertDigit(int digit, int pos) {
         String result = "";
 
+        // Cannot deal with numbers <= 0 returns ""
+        // Or numbers greater than 3888 or so
+
         String c1 = capitals[pos];
         String c2 = capitals[pos+1];
         String c3 = capitals[pos+2];
+
 
         switch (digit) {
             case 1:
@@ -41,9 +45,6 @@ public class RomanNumeralsConverter {
             case 9:
                 result = c1+c3;
                 break;
-            case 0:
-                result = "";
-                break;
         }
 
         return result;
@@ -58,4 +59,5 @@ public class RomanNumeralsConverter {
             }
         return result;
     }
+
 }
